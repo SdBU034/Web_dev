@@ -1,0 +1,111 @@
+@import "init";
+@import "constants";
+
+body {
+    background: lightgoldenrodyellow;
+}
+
+.header {
+    width: 100%;
+    height: $navHeight;
+    background: #3a3a3a;
+    //固定导航栏
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    //透明度
+    //opacity: 0.5;
+
+    .container {
+        width: $pageWidth;
+        height: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+
+        .logo_box {
+            width: 60px;
+            height: 60px;
+            background: url("../../dist/images/logo.jpeg") no-repeat;
+            background-size: cover;
+            border-radius: 30px;
+            margin-top: 3px;
+            //使漂浮
+            float: left;
+
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .nav {
+            margin-left: 200px;
+            float: left;
+
+            li {
+                float: left;
+                margin-right: 100px;
+                //使文字居中
+                line-height: $navHeight;
+                height: $navHeight;
+                //边框出现在box里面还是外面
+                box-sizing: border-box;
+
+                a {
+                    color: lightsalmon;
+                    font-size: 130%;
+                }
+
+                //&代表父元素
+                &.active {
+                    border-bottom: 5px solid blueviolet;
+                }
+            }
+        }
+
+        .auth-box {
+            float: right;
+            line-height: $navHeight;
+            height: $navHeight;
+
+            .iconfont {
+                color: white;
+                font-size: 20px;
+            }
+
+            a {
+                color: white;
+            }
+        }
+    }
+}
+
+.main {
+    width: 100%;
+    margin-top: $navHeight + 20px;
+
+    .wrapper {
+        width: $pageWidth;
+        height: 1000px;
+        margin: 0 auto;
+        background: lightsalmon;
+        //子元素浮动以后获取不到藜麦你的高度，通过overflow：hidden来实现高度
+        overflow: hidden;
+
+        .news-wrapper {
+            float: left;
+            width: 800px;
+            height: 500px;
+            background: #ccc;
+        }
+
+        .sidebar-wrapper {
+            float: right;
+            width: 370px;
+            height: 500px;
+            background: lightsteelblue;
+        }
+    }
+}
