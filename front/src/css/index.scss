@@ -16,6 +16,7 @@ body {
     right: 0;
     //透明度
     //opacity: 0.5;
+    z-index: 100;
 
     .container {
         width: $pageWidth;
@@ -34,14 +35,18 @@ body {
             float: left;
 
             a {
-                display: block;
+                //display: block;
                 width: 100%;
-                height: 100%;
+                line-height: $navHeight;
+                height: $navHeight;
+                margin-left: 70px;
+                font-size: 130%;
+                color: lightgoldenrodyellow;
             }
         }
 
         .nav {
-            margin-left: 200px;
+            margin-left: 250px;
             float: left;
 
             li {
@@ -106,6 +111,8 @@ body {
                 height: $bannerHeight;
                 background: lightgreen;
                 position: relative;
+                overflow: hidden;
+                z-index: 0;
 
                 .banner-ul {
                     overflow: hidden;
@@ -135,6 +142,7 @@ body {
                     margin-top: -43px;
                     cursor: pointer;
                     display: none;
+                    opacity: 0.5;
                 }
 
                 .left-arrow {
@@ -143,6 +151,34 @@ body {
 
                 .right-arrow {
                     right: 20px;
+                }
+
+                .page-control-group {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 20px;
+
+                    .page-control {
+                        margin: 0 auto;
+                        overflow: hidden;
+
+                        li {
+                            margin: 0 15px;
+                            width: 12px;
+                            height: 12px;
+                            border: 2px solid white;
+                            border-radius: 6px;
+                            float: left;
+                            box-sizing: border-box;
+                            cursor: pointer;
+                            opacity: 0.7;
+
+                            &.active {
+                                background: white;
+                            }
+                        }
+                    }
                 }
             }
         }
