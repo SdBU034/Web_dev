@@ -1,2 +1,4 @@
 # Web_dev
-Web全栈开发实战 后端使用Django+Mysql。
+> 前端使用`gulp`自动化及其插件，需要安装`node`，`npm`，`nvm`来安装。  
+
+> 后端web框架使用`Django`，数据库为`Mysql`。
