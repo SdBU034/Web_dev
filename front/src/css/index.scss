@@ -125,6 +125,25 @@ body {
                         }
                     }
                 }
+
+                .arrow {
+                    font-family: "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+                    font-size: 70px;
+                    color: #ffffff;
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -43px;
+                    cursor: pointer;
+                    display: none;
+                }
+
+                .left-arrow {
+                    left: 20px;
+                }
+
+                .right-arrow {
+                    right: 20px;
+                }
             }
         }
 
