@@ -303,12 +303,13 @@ body {
         .sidebar-wrapper {
             float: right;
             width: $sidebarWidth;
-            height: 500px;
+            background: white;
+            overflow: hidden;
 
             .title-group {
                 margin: 20px;
                 overflow: hidden;
-                
+
                 .title {
                     float: left;
                     font-size: 18px;
@@ -383,6 +384,63 @@ body {
                             margin-top: 160px;
                             font-size: smaller;
                             color: slategrey;
+                        }
+                    }
+                }
+            }
+
+            .hot-news-group {
+                overflow: hidden;
+
+                .title {
+                    float: left;
+                    font-size: 16px;
+                    color: $themeColor;
+                }
+
+                .hot-list-group {
+                    width: 100%;
+                    overflow: hidden;
+
+                    li {
+                        .left-group {
+                            width: 200px;
+                            height: 85px;
+                            float: left;
+                            position: relative;
+
+                            .title {
+                                font-size: 10px;
+                                margin-top: 10px;
+                            }
+
+                            .more {
+                                position: absolute;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+
+                                .category {
+                                    float: left;
+                                    font-size: 12px;
+                                    color: $themeColor;
+                                }
+
+                                .pub-time {
+                                    float: right;
+                                    font-size: 12px;
+                                    color: slategray;
+                                }
+                            }
+                        }
+
+                        .right-group {
+                            width: 120px;
+                            float: right;
+
+                            a img {
+                                width: 100%;
+                            }
                         }
                     }
                 }
