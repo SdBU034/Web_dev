@@ -178,13 +178,6 @@ body {
                 }
             }
         }
-
-        .sidebar-wrapper {
-            float: right;
-            width: $sidebarWidth;
-            height: 500px;
-            background: lightsteelblue;
-        }
     }
 }
 
@@ -281,6 +274,115 @@ body {
                                     float: right;
                                 }
                             }
+                        }
+                    }
+                }
+
+                .load-more-group {
+                    padding: 20px 0;
+                    text-align: center;
+
+                    .load-more {
+                        margin: 0 auto;
+                        width: 400px;
+                        height: 40px;
+                        background: #d2dcea;
+                        color: #6d85ac;
+                        border: none;
+                        outline: none;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main {
+    .wrapper {
+        .sidebar-wrapper {
+            float: right;
+            width: $sidebarWidth;
+            height: 500px;
+
+            .title-group {
+                margin: 20px;
+                overflow: hidden;
+                
+                .title {
+                    float: left;
+                    font-size: 18px;
+                }
+                
+                .more {
+                    float: right;
+                    color: $themeColor;
+                    font-weight: bold;
+                }
+            }
+
+            .advertise-group {
+                margin: 20px;
+
+                a img {
+                    width: 100%;
+                }
+            }
+
+            .platform {
+                overflow: hidden;
+
+                .title-group {
+
+                    .title {
+                        font-size: 18px;
+                        color: $themeColor;
+                        float: left;
+                    }
+                }
+
+                .focus {
+                    padding: 0 20px;
+                    overflow: hidden;
+
+                    .left-group {
+                        float: left;
+                        width: 180px;
+                        background: url("https://www.xfz.cn/static/build/images/side-icon.png") no-repeat;
+                        background-size: contain;
+
+                        li {
+                            margin-left: 80px;
+                            width: 120px;
+                            height: 60px;
+                            line-height: 60px;
+                            font-family: "Adobe Caslon Pro Bold";
+                            font-size: large;
+
+                            a {
+                                color: #212121;
+                            }
+
+                            &.weibo {
+                                padding: 20px 0;
+                            }
+                        }
+                    }
+
+                    .right-group {
+                        margin-top: 20px;
+                        width: 140px;
+                        height: 140px;
+                        float: right;
+                        background: url("http://mp.weixin.qq.com/rr?timestamp=1592902717&src=3&ver=1&signature=Dxg7Nx1uQxtlwJDMmyRRejZDX-z3poQqTJ1tWit43aEP2d6QQbdAHl5lJx8tZS2cxC16Jc5oS4Q3OJg7rDaVbSIcuKzmlpdNMPDokBXmdI8=") no-repeat;
+                        background-size: contain;
+                        position: relative;
+
+                        .desc {
+                            margin-left: 30px;
+                            margin-top: 160px;
+                            font-size: smaller;
+                            color: slategrey;
                         }
                     }
                 }
