@@ -1,3 +1,75 @@
 @import "header";
 @import "body";
 @import "footer";
+@import "constants";
+
+.main {
+  .wrapper {
+    .main-content-wrapper {
+      width: 800px;
+      float: left;
+      background: #ffffff;
+
+      .news-wrapper {
+        padding: 20px;
+
+        h1 {
+          font-size: 35px;
+        }
+
+        .info-group {
+          overflow: hidden;
+          margin-top: 38px;
+          font-size: 14px;
+          color: #888888;
+          line-height: 28px;
+
+          .author {
+            float: left;
+          }
+
+          .pub-time {
+            float: left;
+            margin-left: 30px;
+          }
+
+          .category {
+            float: left;
+            color: $themeColor;
+            margin-left: 60px;
+            background: $themeColor;
+            border-radius: 4px;
+            color: white;
+            padding: 2px 4px;
+          }
+
+          .share-group {
+            float: right;
+            overflow: hidden;
+
+            span {
+              float: left;
+            }
+
+            .weixin {
+              float: left;
+              width: 28px;
+              height: 28px;
+              background: url("https://www.xfz.cn/static/build/images/share.png") no-repeat;
+              background-size: 230%;
+            }
+
+            .weibo {
+              margin-left: 10px;
+              float: right;
+              width: 28px;
+              height: 28px;
+              background: url("https://www.xfz.cn/static/build/images/share.png") -36px 0 no-repeat;
+              background-size: 230%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
