@@ -1,0 +1,88 @@
+@import "init";
+@import "constants";
+
+body {
+    background: #f2f2f2;
+}
+
+.header {
+    width: 100%;
+    height: $navHeight;
+    background: #3a3a3a;
+    //固定导航栏
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    //透明度
+    //opacity: 0.5;
+    z-index: 100;
+
+    .container {
+        width: $pageWidth;
+        height: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+
+        .logo_box {
+            width: 60px;
+            height: 60px;
+            background: url("../../dist/images/logo.jpeg") no-repeat;
+            background-size: cover;
+            border-radius: 30px;
+            margin-top: 3px;
+            //使漂浮
+            float: left;
+
+            a {
+                //display: block;
+                width: 100%;
+                line-height: $navHeight;
+                height: $navHeight;
+                margin-left: 70px;
+                font-size: 130%;
+                color: lightgoldenrodyellow;
+            }
+        }
+
+        .nav {
+            margin-left: 250px;
+            float: left;
+
+            li {
+                float: left;
+                margin-right: 100px;
+                //使文字居中
+                line-height: $navHeight;
+                height: $navHeight;
+                //边框出现在box里面还是外面
+                box-sizing: border-box;
+
+                a {
+                    color: lightsalmon;
+                    font-size: 130%;
+                }
+
+                //&代表父元素
+                &.active {
+                    border-bottom: 5px solid blueviolet;
+                }
+            }
+        }
+
+        .auth-box {
+            float: right;
+            line-height: $navHeight;
+            height: $navHeight;
+
+            .iconfont {
+                color: white;
+                font-size: 20px;
+            }
+
+            a {
+                color: white;
+            }
+        }
+    }
+}

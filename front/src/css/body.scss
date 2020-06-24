@@ -1,0 +1,169 @@
+@import "init";
+@import "constants";
+
+.main {
+    width: 100%;
+    margin-top: $navHeight + 20px;
+
+    .wrapper {
+        width: $pageWidth;
+        margin: 0 auto;
+        //子元素浮动以后获取不到藜麦你的高度，通过overflow：hidden来实现高度
+        overflow: hidden;
+
+        .main-content-wrapper {
+
+    }
+  }
+}
+
+.main {
+    .wrapper {
+        .sidebar-wrapper {
+            float: right;
+            width: $sidebarWidth;
+            background: white;
+            overflow: hidden;
+
+            .title-group {
+                margin: 20px;
+                overflow: hidden;
+
+                .title {
+                    float: left;
+                    font-size: 18px;
+                }
+
+                .more {
+                    float: right;
+                    color: $themeColor;
+                    font-weight: bold;
+                }
+            }
+
+            .advertise-group {
+                margin: 20px;
+
+                a img {
+                    width: 100%;
+                }
+            }
+
+            .platform {
+                overflow: hidden;
+
+                .title-group {
+
+                    .title {
+                        font-size: 18px;
+                        color: $themeColor;
+                        float: left;
+                    }
+                }
+
+                .focus {
+                    padding: 0 20px;
+                    overflow: hidden;
+
+                    .left-group {
+                        float: left;
+                        width: 180px;
+                        background: url("https://www.xfz.cn/static/build/images/side-icon.png") no-repeat;
+                        background-size: contain;
+
+                        li {
+                            margin-left: 80px;
+                            width: 120px;
+                            height: 60px;
+                            line-height: 60px;
+                            font-family: "Adobe Caslon Pro Bold";
+                            font-size: large;
+
+                            a {
+                                color: #212121;
+                            }
+
+                            &.weibo {
+                                padding: 20px 0;
+                            }
+                        }
+                    }
+
+                    .right-group {
+                        margin-top: 20px;
+                        width: 140px;
+                        height: 140px;
+                        float: right;
+                        background: url("http://mp.weixin.qq.com/rr?timestamp=1592902717&src=3&ver=1&signature=Dxg7Nx1uQxtlwJDMmyRRejZDX-z3poQqTJ1tWit43aEP2d6QQbdAHl5lJx8tZS2cxC16Jc5oS4Q3OJg7rDaVbSIcuKzmlpdNMPDokBXmdI8=") no-repeat;
+                        background-size: contain;
+                        position: relative;
+
+                        .desc {
+                            margin-left: 30px;
+                            margin-top: 160px;
+                            font-size: smaller;
+                            color: slategrey;
+                        }
+                    }
+                }
+            }
+
+            .hot-news-group {
+                overflow: hidden;
+
+                .title {
+                    float: left;
+                    font-size: 16px;
+                    color: $themeColor;
+                }
+
+                .hot-list-group {
+                    width: 100%;
+                    overflow: hidden;
+
+                    li {
+                        .left-group {
+                            width: 200px;
+                            height: 85px;
+                            float: left;
+                            position: relative;
+
+                            .title {
+                                font-size: 10px;
+                                margin-top: 10px;
+                            }
+
+                            .more {
+                                position: absolute;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+
+                                .category {
+                                    float: left;
+                                    font-size: 12px;
+                                    color: $themeColor;
+                                }
+
+                                .pub-time {
+                                    float: right;
+                                    font-size: 12px;
+                                    color: slategray;
+                                }
+                            }
+                        }
+
+                        .right-group {
+                            width: 120px;
+                            float: right;
+
+                            a img {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
