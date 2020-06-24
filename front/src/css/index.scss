@@ -448,3 +448,144 @@ body {
         }
     }
 }
+
+.footer {
+    font-size: 14px;
+    color: #c9c9c9;
+    padding-top: 20px;
+
+    .top-group {
+        background: #555e67;
+        height: 100px;
+        position: relative;
+
+        .inner-group {
+            width: $pageWidth;
+            margin: 0 auto;
+            overflow: hidden;
+
+            .logo-box {
+                margin-top: 10px;
+                width: 80px;
+                height: 80px;
+                background: url("../../dist/images/logo.jpeg") no-repeat;
+                background-size: cover;
+                float: left;
+                border-radius: 40px;
+            }
+
+            .detail-group {
+                float: left;
+                margin-left: 200px;
+
+                .line-one {
+                    margin-top: 25px;
+                    overflow: hidden;
+
+                    .links {
+                        float: left;
+                        overflow: hidden;
+
+                        li {
+                            float: left;
+                            padding: 0 10px;
+                            border-right: 2px solid #c9c9c9;
+
+                            &:first-of-type {
+                                padding-left: 0;
+                            }
+
+                            &:last-of-type {
+                                border-right: none;
+                            }
+
+                            a {
+                                color: #c9c9c9;
+                            }
+                        }
+                    }
+
+                    .about-us {
+                        float: left;
+                        margin-left: 50px;
+                        overflow: hidden;
+
+                        .title {
+                            float: left;
+                        }
+
+                        .social {
+                            float: left;
+                            overflow: hidden;
+
+                            li {
+                                float: left;
+
+                                a {
+                                    color: #c9c9c9;
+                                }
+                            }
+
+                            .wechat {
+                                background: url("https://www.xfz.cn/static/build/images/wx-icon.png") no-repeat;
+                                background-size: contain;
+                                cursor: pointer;
+
+                                &:hover .wx-qrcode {
+                                    display: block;
+                                }
+
+                                .wx-qrcode {
+                                    height: 180px;
+                                    width: 180px;
+                                    background: url("http://mp.weixin.qq.com/rr?timestamp=1592902717&src=3&ver=1&signature=Dxg7Nx1uQxtlwJDMmyRRejZDX-z3poQqTJ1tWit43aEP2d6QQbdAHl5lJx8tZS2cxC16Jc5oS4Q3OJg7rDaVbSIcuKzmlpdNMPDokBXmdI8=") no-repeat;
+                                    background-size: cover;
+                                    display: none;
+                                    position: absolute;
+                                    right: 500px;
+                                    top: -160px;
+                                }
+
+                                .text {
+                                    margin-left: 30px;
+                                }
+                            }
+
+                            .weibo {
+                                margin-left: 20px;
+                                background: url("https://www.xfz.cn/static/build/images/xl-icon.png") no-repeat;
+                                background-size: contain;
+
+                                .text {
+                                    margin-left: 30px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .line-two {
+                    margin-top: 10px;
+                    overflow: hidden;
+
+                    .address {
+                        float: left;
+                    }
+
+                    .contact {
+                        float: left;
+                        margin-left: 50px;
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom-group {
+        background: #383e44;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        font-size: 12px;
+    }
+}
