@@ -17,7 +17,9 @@
           font-size: 35px;
         }
 
-        .info-group {
+        .news-info {
+
+          .info-group {
           overflow: hidden;
           margin-top: 38px;
           font-size: 14px;
@@ -66,6 +68,103 @@
               height: 28px;
               background: url("https://www.xfz.cn/static/build/images/share.png") -36px 0 no-repeat;
               background-size: 230%;
+            }
+          }
+        }
+        }
+
+        .article {
+          margin-top: 20px;
+
+          img {
+            width: 60%;
+          }
+
+          p {
+            margin: 10px 0;
+          }
+        }
+      }
+
+      .comment-wrapper {
+        padding: 20px;
+        border-top: 1px solid #eeeeee;
+        overflow: hidden;
+        
+        .title {
+          color: #212121;
+          font-size: 18px;
+          font-weight: 400;
+        }
+
+        .comment-textarea {
+          margin-top: 20px;
+          width: 100%;
+          resize: none;
+          outline: none;
+          height: 60px;
+          border: 1px solid #cccccc;
+          border-radius: 5px;
+          font-size: 14px;
+          padding: 6px 10px;
+          box-sizing: border-box;
+        }
+
+        .submit-group {
+          margin-top: 20px;
+          overflow: hidden;
+
+          .submit {
+            margin-right: 20px;
+            float: right;
+            background: $themeColor;
+            padding: 5px 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            color: #eeeeee;
+          }
+        }
+
+        .comment-list {
+          margin-top: 20px;
+
+          li {
+
+            .comment-info {
+              overflow: hidden;
+              height: 40px;
+              font-size: 16px;
+
+              .avatar {
+                float: left;
+                height: 40px;
+                width: 40px;
+                border-radius: 20px;
+              }
+
+              .author {
+                float: left;
+                margin-left: 20px;
+                line-height: 40px;
+              }
+
+              .pub-time {
+                float: right;
+                margin-right: 20px;
+                line-height: 40px;
+                color: #c9c9c9;
+              }
+            }
+
+            .comment-content {
+              margin-top: 20px;
+              p {
+                padding: 0 20px;
+                font-size: 14px;
+              }
             }
           }
         }
