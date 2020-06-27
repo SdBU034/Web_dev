@@ -1,5 +1,5 @@
-@import "init";
-@import "constants";
+@import "../common/init";
+@import "../common/constants";
 
 body {
     background: #f2f2f2;
@@ -27,7 +27,7 @@ body {
         .logo_box {
             width: 60px;
             height: 60px;
-            background: url("../../dist/images/logo.jpeg") no-repeat;
+            background: url("../../../dist/images/logo.jpeg") no-repeat;
             background-size: cover;
             border-radius: 30px;
             margin-top: 3px;
