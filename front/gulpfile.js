@@ -9,7 +9,7 @@ var bs = require('browser-sync').create();
 var sass = require('gulp-sass');
 
 var path = {
-    'css': './src/css/',
+    'css': './src/css/**/',
     'js': './src/js/',
     'images': './src/images/',
     'css_dist': './dist/css/',
