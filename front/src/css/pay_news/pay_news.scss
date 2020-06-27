@@ -1,0 +1,19 @@
+@import "../common/init";
+@import "../common/header";
+@import "../common/body";
+@import "../common/footer";
+@import "../common/constants";
+
+.main {
+  .wrapper {
+    overflow: hidden;
+
+    .main-content-wrapper {
+      float: left;
+
+      .top-image {
+        width: 100%;
+      }
+    }
+  }
+}
