@@ -1,0 +1,183 @@
+@import "../common/footer";
+@import "../common/header";
+@import "../common/body";
+@import "../common/init";
+@import "../common/constants";
+@import "../course/course_nav";
+
+.main {
+  background: #eeeeee;
+
+  .wrapper {
+
+    .course-wrapper {
+      margin-top: 20px;
+      background: white;
+
+      .course-info {
+        padding: 20px;
+
+        .title {
+          color: #212121;
+          font-size: 20px;
+        }
+
+        .price-group {
+          overflow: hidden;
+          margin-top: 20px;
+
+          .share-group {
+            float: left;
+            overflow: hidden;
+            line-height: 40px;
+
+            .course-title {
+              float: left;
+              font-size: 14px;
+            }
+
+            .weixin {
+              float: left;
+              width: 28px;
+              height: 28px;
+              background: url("https://www.xfz.cn/static/build/images/share.png") no-repeat;
+              background-size: 230%;
+            }
+
+            .weibo {
+              margin-left: 10px;
+              float: right;
+              width: 28px;
+              height: 28px;
+              background: url("https://www.xfz.cn/static/build/images/share.png") -36px 0 no-repeat;
+              background-size: 230%;
+            }
+          }
+
+          .buy-group {
+            float: right;
+
+            .price {
+              font-size: 16px;
+              font-weight: bold;
+              color: lightgreen;
+            }
+
+            .buy-btn {
+              display: inline-block;
+              height: 40px;
+              background: darkorange;
+              border-radius: 5px;
+              color: white;
+              width: 120px;
+              height: 40px;
+              text-align: center;
+              line-height: 40px;
+              margin-left: 20px;
+            }
+          }
+        }
+      }
+    }
+
+    .bottom-wrapper {
+      overflow: hidden;
+
+      .course-group {
+        float: left;
+        width: $newsWidth;
+
+        .item-group {
+          padding: 20px 30px;
+          background: white;
+          margin-top: 20px;
+
+        .item-title {
+          font-size: 18px;
+          border-left: 5px solid $themeColor;
+          padding-left: 10px;
+        }
+
+        .teacher-group {
+          overflow: hidden;
+          margin-top: 20px;
+
+          .avatar {
+            float: left;
+            width: 70px;
+            height: 70px;
+            border-radius: 35px;
+          }
+
+          .teacher-info {
+            margin-left: 10px;
+            float: left;
+            color: #696969;
+
+            .teacher-name {
+              margin-top: 10px;
+            }
+
+            .teacher-desc {
+              margin-top: 5px;
+            }
+          }
+        }
+
+        .item-content {
+          margin-top: 20px;
+          color: #444444;
+          line-height: 1.8;
+          font-size: 16px;
+        }
+      }
+
+      }
+
+      .recommend-wrapper {
+        margin-top: 20px;
+        float: right;
+        width: $sidebarWidth;
+        background: white;
+
+        .recommend-title {
+          padding: 20px;
+          font-size: 20px;
+        }
+
+        .course-list {
+          padding: 0 20px;
+
+          .course-detail {
+            overflow: hidden;
+            padding: 20px 0;
+            border-top: 1px solid #eeeeee;
+
+            .course-info {
+              width: 190px;
+              float: left;
+
+              .course-name {
+                font-size: 16px;
+                color: #2a2a2a;
+                margin-top: 10px;
+              }
+              
+              .teacher {
+                font-size: 12px;
+                color: #878787;
+                margin-top: 10px;
+              }
+            }
+
+            .course-image {
+              width: 150px;
+              float: right;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
