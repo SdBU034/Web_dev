@@ -10,9 +10,61 @@
 
     .main-content-wrapper {
       float: left;
+      width: $newsWidth;
 
       .top-image {
         width: 100%;
+      }
+
+      .news-list {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        li {
+          width: 380px;
+          background: white;
+          margin-bottom: 20px;
+          overflow: hidden;
+          cursor: pointer;
+
+          &:hover {
+            box-shadow: 0 5px 15px slategrey;
+          }
+
+          .thumbnail {
+            float: left;
+            width: 100px;
+            height: 150px;
+          }
+
+          .news-info {
+            float: right;
+            width: 260px;
+            padding: 10px;
+
+            .title {
+              margin-top: 10px;
+              font-size: 20px;
+              color: #212121;
+            }
+
+            .desc {
+              font-size: 14px;
+              color: #888888;
+              margin-top: 15px;
+            }
+
+            .price {
+              color: darkorange;
+              font-size: 16px;
+              text-align: right;
+              margin-top: 15px;
+            }
+          }
+        }
       }
     }
   }
