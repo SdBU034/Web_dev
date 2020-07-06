@@ -29,16 +29,17 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">请登录</p>
 
-      <form action="" method="post">
+      <form action="{% url 'sdbuauth:login' %}" method="post">
+          {% csrf_token %}
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="邮箱">
+          <input type="text" class="form-control" placeholder="手机号码" name="telephone">
           <div class="input-group-append">
             <div class="input-group-text">
             </div>
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="密码">
+          <input type="password" class="form-control" placeholder="密码" name="password">
           <div class="input-group-append">
             <div class="input-group-text">
             </div>
@@ -47,7 +48,7 @@
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">
-              <input type="checkbox" id="remember">
+              <input type="checkbox" id="remember" name="remember" value="1">
               <label for="remember">
                 记住密码
               </label>
