@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'apps.news',
     'apps.cms',
     'apps.sdbuauth',
+    'apps.course',
 ]
 
 MIDDLEWARE = [

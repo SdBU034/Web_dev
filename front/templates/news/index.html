@@ -1,35 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>SdBU首页</title>
+{% extends 'base/front_base.html' %}
+
+{% block title %}
+SdBU034首页
+{% endblock %}
+
+{% block head %}
     <link rel="stylesheet" href="{% static 'css/news/index.min.css' %}">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1898405_fzbxx2diiu8.css">
-    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
     <script src="{% static 'js/index.min.js' %}"></script>
-</head>
+{% endblock %}
 
-<body>
-    <header class="header">
-        <div class="container">
-            <div class="logo_box">
-                <a href="/">SdBU034</a>
-            </div>
-
-            <ul class="nav">
-                <li class="active"><a href="/">创业资讯</a></li>
-                <li><a href="../../templates/course/course_index.html">创业课堂</a></li>
-                <li><a href="#">付费资讯</a></li>
-                <li><a href="#">搜索</a></li>
-            </ul>
-
-            <div class="auth-box">
-                <i class="icon-person_crop_circle iconfont"></i>
-                <a href="#">登陆/注册</a>
-            </div>
-        </div>
-    </header>
-
+{% block main %}
     <div class="main">
         <div class="wrapper">
             <div class="main-content-wrapper">
@@ -61,7 +41,7 @@
                                 <a href="#"><img src="https://inews.gtimg.com/newsapp_ls/0/11969859125_640330/0" alt=""></a>
                             </div>
                             <div class="news-group">
-                                <p class="title"><a href="{% url 'news:news_detail' %}" target="_blank">专题iOS要有大变化？还有这些新硬件？凌晨的苹果发布会有这些重要看点</a></p>
+                                <p class="title"><a href="#" target="_blank">专题iOS要有大变化？还有这些新硬件？凌晨的苹果发布会有这些重要看点</a></p>
                                 <p class="desc">iOS 14 的更新或将保留 iOS 13 的绝大多数设计语言，用户界面上可能不会出现太明显的变化，主要集中于功能性的升级。</p>
                                 <p class="more">
                                     <span class="category">深度报道</span>
@@ -104,87 +84,7 @@
                     </div>
                 </div>
             </div>
-            <div class="sidebar-wrapper">
-                <div class="title-group">
-                    <span class="title">在线课堂</span>
-                    <a href="#" class="more">更多</a>
-                </div>
-                <div class="advertise-group">
-                    <a href="#"><img src="https://10.url.cn/qqcourse_logo_ng/ajNVdqHZLLDbInC2j6DKPA42nzzIhCeWOKoAg01JmOlEeQ0ticrAoTLqqJf7a6MwlJxZAy9iaRPtw/356" alt=""></a>
-                </div>
-                <div class="platform">
-                    <div class="title-group">
-                        <span class="title">关注我</span>
-                    </div>
-                    <div class="focus">
-                        <ul class="left-group">
-                            <li class="zhihu"><a href="#" target="_blank">SdBU034</a></li>
-                            <li class="weibo"><a href="#" target="_blank">SdBU034</a></li>
-                            <li class="toutiao"><a href="#" target="_blank">SdBU034</a></li>
-                        </ul>
-                        <div class="right-group">
-                            <p class="desc">扫码关注我们</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="hot-news-group">
-                    <div class="title-group">
-                        <span class="title">热门推荐</span>
-                        <ul class="hot-list-group">
-                            <li>
-                                <div class="left-group">
-                                    <p class="title"><a href="#">人物|4年得分翻6倍!新晋全明星还能变更强么...</a></p>
-                                    <p class="more">
-                                        <span class="category">干货分享</span>
-                                        <span class="pub-time">2020年06月20日 14:34</span>
-                                    </p>
-                                </div>
-                                <div class="right-group">
-                                    <a href="#">
-                                        <img src="https://n.sinaimg.cn/sports/crawl/116/w550h366/20200620/ef50-ivffpcs8814712.jpg" alt="">
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            {% include 'common/sidebar.html' %}
         </div>
     </div>
-
-    <footer class="footer">
-        <div class="top-group">
-            <div class="inner-group">
-                <div class="logo-box"></div>
-                <div class="detail-group">
-                    <div class="line-one">
-                        <ul class="links">
-                            <li><a href="#">关于SdBU034</a></li>
-                            <li><a href="#">创业课堂</a></li>
-                            <li><a href="#">寻求报道</a></li>
-                            <li><a href="#">创业礼包</a></li>
-                        </ul>
-                        <div class="about-us">
-                            <span class="title">关于我们：</span>
-                            <ul class="social">
-                                <li class="wechat">
-                                    <div class="wx-qrcode"></div>
-                                    <a href="#" class="text">SdBU034</a>
-                                </li>
-                                <li class="weibo"><a href="#" class="text">SdBU034</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="line-two">
-                        <p class="address">地址：山东省济南市市中区二环东路11896号</p>
-                        <p class="contact">联系方式：400-810-1090（工作日10点-18点）</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bottom-group">
-            ©2020 北京子木投资顾问有限公司 京ICP备15051289号 | 增值电信业务经营许可证：京B2-20170574
-        </div>
-    </footer>
-</body>
-</html>
+{% endblock %}

@@ -1,35 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>在线课堂</title>
-    <link rel="stylesheet" href="../../dist/css/course/course_detail.min.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1898405_fzbxx2diiu8.css">
-    <script src="../../dist/js/jquery-3.4.1.min.js"></script>
-</head>
 
-<body>
-    <header class="header">
-        <div class="container">
-            <div class="logo_box">
-                <a href="../../templates/news/index.html">SdBU034</a>
-            </div>
+{% extends 'base/front_base.html' %}
 
-            <ul class="nav">
-                <li><a href="/">创业资讯</a></li>
-                <li class="active"><a href="../../templates/course/course_index.html">创业课堂</a></li>
-                <li><a href="#">付费资讯</a></li>
-                <li><a href="#">搜索</a></li>
-            </ul>
+{% block title %}
+    在线课堂
+{% endblock %}
 
-            <div class="auth-box">
-                <i class="icon-person_crop_circle iconfont"></i>
-                <a href="#">登陆/注册</a>
-            </div>
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/course/course_detail.min.css' %}">
+{% endblock %}
 
-        </div>
-    </header>
-
+{% block main %}
     <div class="main">
         <div class="course-nav">
             <div class="nav-container">
@@ -124,40 +104,4 @@
             </div>
         </div>
     </div>
-
-    <footer class="footer">
-        <div class="top-group">
-            <div class="inner-group">
-                <div class="logo-box"></div>
-                <div class="detail-group">
-                    <div class="line-one">
-                        <ul class="links">
-                            <li><a href="#">关于SdBU034</a></li>
-                            <li><a href="#">创业课堂</a></li>
-                            <li><a href="#">寻求报道</a></li>
-                            <li><a href="#">创业礼包</a></li>
-                        </ul>
-                        <div class="about-us">
-                            <span class="title">关于我们：</span>
-                            <ul class="social">
-                                <li class="wechat">
-                                    <div class="wx-qrcode"></div>
-                                    <a href="#" class="text">SdBU034</a>
-                                </li>
-                                <li class="weibo"><a href="#" class="text">SdBU034</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="line-two">
-                        <p class="address">地址：山东省济南市市中区二环东路11896号</p>
-                        <p class="contact">联系方式：400-810-1090（工作日10点-18点）</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bottom-group">
-            ©2020 北京子木投资顾问有限公司 京ICP备15051289号 | 增值电信业务经营许可证：京B2-20170574
-        </div>
-    </footer>
-</body>
-</html>
+{% endblock %}
