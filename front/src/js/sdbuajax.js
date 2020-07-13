@@ -40,11 +40,11 @@ var sdbuajax = {
                 if(typeof messageObject == 'string' || messageObject.constructor == String){
                     window.messageBox.showError(messageObject);
                 }else{
-                    // {"password":['密码最大长度不能超过20为！','xxx'],"telephone":['xx','x']}
                     for(var key in messageObject){
                         var messages = messageObject[key];
                         var message = messages[0];
                         window.messageBox.showError(message);
+                        // window.alert(message);
                     }
                 }
                 if(success){
@@ -55,6 +55,7 @@ var sdbuajax = {
         args['fail'] = function (error) {
             console.log(error);
             window.messageBox.showError('服务器内部错误！');
+            // window.alert('服务器内部错误');
         };
         $.ajax(args);
     },

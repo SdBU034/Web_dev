@@ -52,6 +52,7 @@ Auth.prototype.listenSwitchEvent = function () {
 };
 
 Auth.prototype.listenLoginEvent = function () {
+  var self = this;
   var loginGroup = $('.login');
   var telephoneInput = loginGroup.find('input[name="telephone"]');
   var passwordInput = loginGroup.find('input[name="password"]');
@@ -68,12 +69,24 @@ Auth.prototype.listenLoginEvent = function () {
           'data': {
               'telephone': telephone,
               'password': password,
-              'remember': remember,
+              'remember': remember?1:0,
           },
           'success': function (result) {
-              console.log('========');
-              console.log(result);
-              console.log('========');
+              if(result['code'] == 200) {
+                  self.hideEvent();
+                  window.location.reload();
+              }else{
+                  var messageObject = result['message'];
+                  if(typeof messageObject == 'string' || messageObject.constructor == String) {
+                      console.log(messageObject);
+                  }else {
+                      for(var key in messageObject){
+                          var messages = messageObject[key];
+                          var message = messages[0];
+                          console.log(message);
+                      }
+                  }
+              }
           },
           'fail': function (error) {
               console.log(error);
