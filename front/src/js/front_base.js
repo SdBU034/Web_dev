@@ -1,6 +1,26 @@
+//用来处理导航条
+function FrontBase() {
+
+}
+
+FrontBase.prototype.run = function () {
+    var self = this;
+    self.listenAuthBox();
+};
+
+FrontBase.prototype.listenAuthBox = function () {
+    var authBox = $('.auth-box');
+    var userMoreBox = $('.user-more-box')
+    authBox.hover(function () {
+        userMoreBox.show();
+    }, function () {
+        userMoreBox.hide();
+    });
+};
+
 
 //登录弹出模态窗口
-
+//用来处理登录
 function Auth() {
     var self = this;
     self.maskWrapper = $('.mask-wrapper');
@@ -12,6 +32,7 @@ Auth.prototype.run = function () {
     self.listenShowHideEvent();
     self.listenSwitchEvent();
     self.listenLoginEvent();
+    self.listenImgCaptcha();
 };
 
 Auth.prototype.showEvent = function () {
@@ -49,6 +70,13 @@ Auth.prototype.listenSwitchEvent = function () {
            self.scrollWrapper.animate({'left':'-400px'});
        }
    });
+};
+
+Auth.prototype.listenImgCaptcha = function (){
+    var imgCaptcha = $('.img-captcha');
+    imgCaptcha.click(function () {
+        imgCaptcha.attr('src', '/account/img_captcha/' + '?random=' + Math.random())
+    });
 };
 
 Auth.prototype.listenLoginEvent = function () {
@@ -98,4 +126,9 @@ Auth.prototype.listenLoginEvent = function () {
 $(function () {
   var auth = new Auth();
   auth.run();
+});
+
+$(function () {
+   var frontBase = new FrontBase();
+   frontBase.run();
 });

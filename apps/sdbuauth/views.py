@@ -2,6 +2,10 @@ from django.contrib.auth import login, logout, authenticate
 from django.views.decorators.http import require_POST
 from .forms import LoginForm
 from utils import restful
+from django.shortcuts import redirect, reverse
+from utils.captcha.sdbucaptcha import Captcha
+from io import BytesIO
+from django.http import HttpResponse
 
 
 # Create your views here.
@@ -32,3 +36,24 @@ def login_view(request):
     else:
         errors = form.get_errors()
         return restful.params_error(message=errors)
+
+
+def logout_view(request):
+    logout(request)
+    return redirect(reverse('index'))
+
+
+def img_captcha(request):
+    text, image = Captcha.gene_code()
+    # 创建流对象，存储图片的流数据
+    out = BytesIO()
+    # 将img随想保存到BytesIO中
+    image.save(out, 'png')
+    # 将文件指针移动到文件开头
+    out.seek(0)
+
+    response = HttpResponse(content_type='image/png')
+    response.write(out.read())
+    # out.tell()代表指针当前所在的位置
+    response['content-length'] = out.tell()
+    return response
