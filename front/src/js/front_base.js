@@ -33,6 +33,7 @@ Auth.prototype.run = function () {
     self.listenSwitchEvent();
     self.listenLoginEvent();
     self.listenImgCaptcha();
+    self.listenRegisterEvent();
 };
 
 Auth.prototype.showEvent = function () {
@@ -100,27 +101,47 @@ Auth.prototype.listenLoginEvent = function () {
               'remember': remember?1:0,
           },
           'success': function (result) {
-              if(result['code'] == 200) {
-                  self.hideEvent();
-                  window.location.reload();
-              }else{
-                  var messageObject = result['message'];
-                  if(typeof messageObject == 'string' || messageObject.constructor == String) {
-                      console.log(messageObject);
-                  }else {
-                      for(var key in messageObject){
-                          var messages = messageObject[key];
-                          var message = messages[0];
-                          console.log(message);
-                      }
-                  }
-              }
+              self.hideEvent();
+              window.location.reload();
           },
-          'fail': function (error) {
-              console.log(error);
-          }
       });
   })
+};
+
+Auth.prototype.listenRegisterEvent = function () {
+    var self = this;
+    var registerGroup = $('.register');
+    var submitBtn = registerGroup.find('.submit-btn');
+    
+    submitBtn.click(function (event) {
+        event.preventDefault();
+        var telephoneInput = registerGroup.find('input[name="telephone"]');
+        var usernameInput = registerGroup.find('input[name="username"]');
+        var imgCaptchaInput = registerGroup.find('input[name="img_captcha"]');
+        var pwd1Input = registerGroup.find('input[name="pwd1"]');
+        var pwd2Input = registerGroup.find('input[name="pwd2"]');
+
+        var telephone = telephoneInput.val();
+        var username = usernameInput.val();
+        var img_captcha = imgCaptchaInput.val();
+        var pwd1 = pwd1Input.val();
+        var pwd2 = pwd2Input.val();
+
+        sdbuajax.post({
+            'url': '/account/register/',
+            'data': {
+                'telephone': telephone,
+                'username': username,
+                'pwd1': pwd1,
+                'pwd2': pwd2,
+                'img_captcha': img_captcha,
+            },
+            'success': function () {
+                self.hideEvent();
+                window.location.reload();
+            }
+        })
+    });
 };
 
 $(function () {

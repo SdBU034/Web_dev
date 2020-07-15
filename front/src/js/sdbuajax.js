@@ -55,7 +55,6 @@ var sdbuajax = {
         args['fail'] = function (error) {
             console.log(error);
             window.messageBox.showError('服务器内部错误！');
-            // window.alert('服务器内部错误');
         };
         $.ajax(args);
     },

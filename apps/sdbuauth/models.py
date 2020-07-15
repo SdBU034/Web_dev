@@ -31,7 +31,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     # 不使用默认的自增长的主键，使用short-uuid
     uid = ShortUUIDField(primary_key=True)
     telephone = models.CharField(max_length=11, unique=True)
-    email = models.EmailField(unique=True)
+    email = models.EmailField(unique=True, null=True)
     username = models.CharField(max_length=16)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)

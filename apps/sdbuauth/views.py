@@ -1,11 +1,14 @@
-from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth import login, logout, authenticate, get_user_model
 from django.views.decorators.http import require_POST
-from .forms import LoginForm
+from .forms import LoginForm, RegisterForm
 from utils import restful
 from django.shortcuts import redirect, reverse
 from utils.captcha.sdbucaptcha import Captcha
 from io import BytesIO
 from django.http import HttpResponse
+from django.core.cache import cache
+
+User = get_user_model()
 
 
 # Create your views here.
@@ -56,4 +59,22 @@ def img_captcha(request):
     response.write(out.read())
     # out.tell()代表指针当前所在的位置
     response['content-length'] = out.tell()
+
+    cache.set(text.lower(), text.lower(), 5*60)
+
     return response
+
+
+@require_POST
+def register(request):
+    form = RegisterForm(request.POST)
+    if form.is_valid():
+        telephone = form.cleaned_data.get('telephone')
+        username = form.cleaned_data.get('username')
+        password = form.cleaned_data.get('pwd1')
+        user = User.objects.create_user(telephone=telephone, username=username, password=password)
+        login(request, user)
+        return restful.ok()
+    else:
+        restful.params_error(message=form.get_errors())
+    return redirect(reverse('index'))
