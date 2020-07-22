@@ -1,0 +1,61 @@
+{% extends 'cms/base.html' %}
+
+{% block title %}
+    新闻分类
+{% endblock %}
+
+{% block head %}
+    <script src="{% static 'js/news_category.min.js' %}"></script>
+{% endblock %}
+
+{% block content-header %}
+    <h1 style="margin: 10px 0 10px 20px">新闻分类</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                  <button class="btn btn-primary float-right" id="add-category">添加分类</button>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>分类名</th>
+                      <th>新闻数量</th>
+                      <th style="width: 200px">操作</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for category in categories %}
+                        <tr>
+                      <td>{{ forloop.counter }}.</td>
+                      <td>{{ category.name }}</td>
+                      <td>44</td>
+                      <td>
+                          <button type="button" class="btn btn-success btn-xs">编辑</button>
+                          <button type="button" class="btn btn-danger btn-xs">删除</button>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer clearfix">
+                <ul class="pagination pagination-sm m-0 float-right">
+                  <li class="page-item"><a class="page-link" href="#">«</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">»</a></li>
+                </ul>
+              </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

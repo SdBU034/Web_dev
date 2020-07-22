@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.contrib.admin.views.decorators import staff_member_required
+from django.views.decorators.http import require_POST, require_GET
+from apps.news.models import NewsCategory
+from utils import restful
 
 
 # Create your views here.
@@ -10,4 +13,25 @@ def index(request):
 
 
 def write_news(request):
-    return render(request, 'cms/write_news.html')
+    categories = NewsCategory.objects.all()
+    context = {'categories': categories}
+    return render(request, 'cms/write_news.html', context=context)
+
+
+@require_GET
+def news_category(request):
+    categories = NewsCategory.objects.all()
+    context = {'categories': categories}
+    return render(request, 'cms/news_category.html', context=context)
+
+
+@require_POST
+def add_news_category(request):
+    name = request.POST.get('name')
+    print(name)
+    exists = NewsCategory.objects.filter(name=name).exists()
+    if not exists:
+        NewsCategory.objects.create(name=name)
+        return restful.ok()
+    else:
+        return restful.params_error(message='该分类已经存在。')

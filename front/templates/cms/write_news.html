@@ -25,11 +25,9 @@
                         <div class="form-group">
                             <label for="category-form">分类</label>
                             <select class="form-control" id="category-form">
-                                <option value="1">创业案例</option>
-                                <option value="2">热点</option>
-                                <option value="3">金融科技</option>
-                                <option value="4">最新资讯</option>
-                                <option value="5">行业新闻</option>
+                                {% for category in categories %}
+                                    <option value="{{ forloop.counter }}">{{ category.name }}</option>
+                                {% endfor %}
                             </select>
                         </div>
 
