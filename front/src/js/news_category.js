@@ -26,6 +26,9 @@ NewsCategory.prototype.listenAddCategoryEvent = function () {
                       if(result['code'] === 200){
                           console.log(result);
                           window.location.reload();
+                      }else {
+                          sdbualert.close();
+                          window.messageBox.showError(result['message']);
                       }
                   }
               });
