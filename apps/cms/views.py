@@ -3,6 +3,7 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.views.decorators.http import require_POST, require_GET
 from apps.news.models import NewsCategory
 from utils import restful
+from .forms import EditNewsCategoryForm
 
 
 # Create your views here.
@@ -28,10 +29,38 @@ def news_category(request):
 @require_POST
 def add_news_category(request):
     name = request.POST.get('name')
-    print(name)
     exists = NewsCategory.objects.filter(name=name).exists()
     if not exists:
         NewsCategory.objects.create(name=name)
         return restful.ok()
     else:
         return restful.params_error(message='该分类已经存在。')
+
+
+@require_POST
+def edit_news_category(request):
+    form = EditNewsCategoryForm(request.POST)
+    if form.is_valid():
+        pk = form.cleaned_data.get('pk')
+        name = form.cleaned_data.get('name')
+        try:
+            NewsCategory.objects.filter(pk=pk).update(name=name)
+            return restful.ok()
+        except:
+            return restful.params_error(message='该新闻分类不存在。')
+    else:
+        return restful.params_error(message=form.get_errors())
+
+
+@require_POST
+def delete_news_category(request):
+    pk = request.POST.get('pk')
+    exists = NewsCategory.objects.filter(pk=pk).exists()
+    if exists:
+        try:
+            NewsCategory.objects.get(pk=pk).delete()
+            return restful.ok()
+        except:
+            return restful.params_error(message='当前分类不存在。')
+    else:
+        return restful.params_error(message='当前分类不存在。')

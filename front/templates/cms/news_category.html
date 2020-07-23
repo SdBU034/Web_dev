@@ -32,15 +32,15 @@
                   </thead>
                   <tbody>
                     {% for category in categories %}
-                        <tr>
-                      <td>{{ forloop.counter }}.</td>
-                      <td>{{ category.name }}</td>
-                      <td>44</td>
-                      <td>
-                          <button type="button" class="btn btn-success btn-xs">编辑</button>
-                          <button type="button" class="btn btn-danger btn-xs">删除</button>
-                      </td>
-                    </tr>
+                        <tr data-pk="{{ category.pk }}" data-name="{{ category.name }}">
+                            <td>{{ forloop.counter }}.</td>
+                            <td>{{ category.name }}</td>
+                            <td>44</td>
+                            <td>
+                                <button type="button" class="btn btn-success btn-xs edit-new-category">编辑</button>
+                                <button type="button" class="btn btn-danger btn-xs delete-new-category">删除</button>
+                            </td>
+                        </tr>
                     {% endfor %}
                   </tbody>
                 </table>
