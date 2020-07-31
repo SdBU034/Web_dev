@@ -1,9 +1,11 @@
+import os
 from django.shortcuts import render
 from django.contrib.admin.views.decorators import staff_member_required
 from django.views.decorators.http import require_POST, require_GET
 from apps.news.models import NewsCategory
 from utils import restful
 from .forms import EditNewsCategoryForm
+from django.conf import settings
 
 
 # Create your views here.
@@ -64,3 +66,16 @@ def delete_news_category(request):
             return restful.params_error(message='当前分类不存在。')
     else:
         return restful.params_error(message='当前分类不存在。')
+
+
+@require_POST
+def upload_file(request):
+    file = request.FILES.get('file')
+    name = file.name
+    with open(os.path.join(settings.MEDIA_ROOT + '/' + name), 'wb') as fp:
+        for chunk in file.chunks():
+            fp.write(chunk)
+    # build_absolute_uri()继承了域名以及端口号等信息
+    url = request.build_absolute_uri(settings.MEDIA_URL + name)
+    return restful.result(data={'url': url, })
+
