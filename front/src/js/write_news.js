@@ -24,10 +24,17 @@ News.prototype.listenUploadFileEvent = function () {
     });
 };
 
+News.prototype.initUEditor = function () {
+    window.ue = UE.getEditor('editor',{
+        'initialFrameHeight': 400,
+        'serverUrl': '/ueditor/upload/'
+    });
+};
 
 News.prototype.run = function () {
     var self = this;
-    this.listenUploadFileEvent();
+    self.initUEditor();
+    self.listenUploadFileEvent();
 };
 
 

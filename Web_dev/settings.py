@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'apps.cms',
     'apps.sdbuauth',
     'apps.course',
+    'apps.ueditor',
 ]
 
 MIDDLEWARE = [
@@ -144,3 +145,7 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+UEDITOR_UPLOAD_TO_SERVER = True
+UEDITOR_UPLOAD_PATH = MEDIA_ROOT
+UEDITOR_CONFIG_PATH = os.path.join(BASE_DIR, 'front', 'dist', 'ueditor', 'config.json')

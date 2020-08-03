@@ -5,6 +5,8 @@
 {% endblock %}
 
 {% block head %}
+    <script src="{% static 'ueditor/ueditor.config.js' %}"></script>
+    <script src="{% static 'ueditor/ueditor.all.min.js' %}"></script>
     <script src="{% static 'js/write_news.min.js' %}"></script>
 {% endblock %}
 
@@ -51,8 +53,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="InputDesc">内容</label>
-                            <textarea class="textarea" name="content" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid rgb(221, 221, 221); padding: 10px; display: none;"></textarea>
+                            <label>内容</label>
+                            <script id="editor" type="text/plain"></script>
                         </div>
 
                         <div class="form-check">
