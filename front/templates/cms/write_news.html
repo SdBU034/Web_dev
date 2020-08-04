@@ -30,7 +30,7 @@
 
                         <div class="form-group">
                             <label for="category-form">分类</label>
-                            <select class="form-control" id="category-form">
+                            <select class="form-control" id="category-form" name="category">
                                 {% for category in categories %}
                                     <option value="{{ category.pk }}">{{ category.name }}</option>
                                 {% endfor %}
@@ -65,7 +65,7 @@
                     <!-- /.card-body -->
 
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">发布</button>
+                        <button type="submit" class="btn btn-primary" id="submit-btn">发布</button>
                     </div>
                 </form>
             </div>
