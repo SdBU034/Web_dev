@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'apps.sdbuauth',
     'apps.course',
     'apps.ueditor',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
